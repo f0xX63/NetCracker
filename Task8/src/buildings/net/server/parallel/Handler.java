@@ -41,13 +41,16 @@ public class Handler extends Thread {
                     out.writeObject(e);
                     out.flush();
                 }
-                int code = in.readInt();
-                if (code == 1)
-                    break;
             }
-        } catch (Exception e)
+        } catch (EOFException e)
         {
-            e.printStackTrace();
+            System.out.println("Server: Client socket close");
+        }catch (IOException e)
+        {
+            System.out.println("Server: " + e.getMessage());
+        } catch (ClassNotFoundException e)
+        {
+            System.out.println("Server: " + e.getMessage());
         }
     }
 }

@@ -107,8 +107,6 @@ public class BinaryClient {
                     fos.write("Building arested\n");
                 }
 
-                oos.writeInt(1);
-                oos.flush();
                 System.out.println("Client: Client completed success");
             }
         } catch (FileNotFoundException e) {
